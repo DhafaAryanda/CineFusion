@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('package_id')->constrained('packages');
             $table->foreignId('user_id')->constrained('users');
-            $table->date('end_of_subscription')
+            $table->date('end_of_subscription');
             $table->timestamps();
         });
     }
