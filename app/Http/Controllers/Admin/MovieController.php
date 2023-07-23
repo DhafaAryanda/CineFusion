@@ -20,6 +20,12 @@ class MovieController extends Controller
         return view('admin.movie-create');
     }
 
+    public function edit($id)
+    {
+        $movie = Movie::find($id);
+        return view('admin.movie-edit', ['movie' => $movie]);
+    }
+
     public function store(Request $request)
     {
         $data = $request->except('_token');
@@ -56,5 +62,9 @@ class MovieController extends Controller
 
         return redirect()->route('admin.movie')->with('success', 'Movie created successfully!');
 
+    }
+
+    public function update(Request $request, $id){
+        
     }
 }
