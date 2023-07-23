@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Models\Movie;
 
 class MovieController extends Controller
 {
     public function index()
     {
-        return view('admin.movies');
+        $movies = Movie::all();
+        return view('admin.movies', ['movies' => $movies]);
     }
 
     public function create()
@@ -44,7 +46,15 @@ class MovieController extends Controller
 
         $smallThumbnail->storeAs('public/thumbnails/small', $originalSmallThumbnailName);
         $largeThumbnail->storeAs('public/thumbnails/large', $originalLargeThumbnailName);
+        
+        $data['small_thumbnail'] = $originalSmallThumbnailName;
+        $data['large_thumbnail'] = $originalLargeThumbnailName;
 
-        dd($originalSmallThumbnailName);
+        Movie::create($data);
+
+        // dd($data);
+
+        return redirect()->route('admin.movie')->with('success', 'Movie created successfully!');
+
     }
 }

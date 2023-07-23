@@ -16,7 +16,7 @@ class Movie extends Model
         'title',
         'trailer',
         'movie',
-        'cast',
+        'casts',
         'categories',
         'small_thumbnail',
         'large_thumbnail',

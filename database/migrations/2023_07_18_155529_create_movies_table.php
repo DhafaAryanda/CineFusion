@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('trailer');
             $table->string('movie');
-            $table->string('cast');
+            $table->string('casts');
             $table->string('categories');
             $table->string('small_thumbnail');
             $table->string('large_thumbnail');
