@@ -55,6 +55,13 @@
                       <a href="{{ route('admin.movie.edit', $movie -> id) }}" class="btn btn-secondary">
                         <i class="far fa-edit"></i>
                       </a>
+                      <form method="POST" action="{{ route('admin.movie.destroy', $movie->id) }}">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </form>
                     </td>
                   </tr>
                 @endforeach
