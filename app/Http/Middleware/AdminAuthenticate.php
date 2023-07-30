@@ -22,7 +22,7 @@ class AdminAuthenticate
             return $next($request);
         }
 
-        return route('admin.login');
+        return redirect()->route('admin.login');
 
     }
 }
