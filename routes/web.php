@@ -20,9 +20,10 @@ use App\Http\Controllers\Admin\LoginController;
 //     return view('welcome');
 // });
 
+Route::view('/', 'index');
+
 Route::get('admin/login', [LoginController::class, 'index'])->name('admin.login');
 Route::post('admin/login', [LoginController::class, 'authenticate'])->name('admin.login.auth');
-
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function() {
     Route::view('/', 'admin.dashboard')->name('admin.dashboard');
@@ -39,8 +40,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function() {
         Route::get('/edit/{id}', [MovieController::class, 'edit'])->name('admin.movie.edit');
         Route::put('/update/{id}', [MovieController::class, 'update'])->name('admin.movie.update');
         Route::delete('/destroy/{id}', [MovieController::class, 'destroy'])->name('admin.movie.destroy');
-    });
-
-    
+    });    
 });
 
