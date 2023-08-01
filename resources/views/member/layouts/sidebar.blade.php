@@ -2,7 +2,7 @@
 <aside class="fixed z-50 w-[360px] bg-stream-dark">
     <div class="flex flex-col p-12 border-r border-softpur overflow-y-auto h-screen">
         <a href="/">
-            <img src="{{ assets('cinefusion/assets/images/stream.svg') }}" alt="">
+            <img src="{{ asset('cinefusion/assets/images/stream.svg') }}" alt="">
         </a>
         <div class="links flex flex-col mt-16 gap-2">
             <a href="dashboard.html" class="side-link active">

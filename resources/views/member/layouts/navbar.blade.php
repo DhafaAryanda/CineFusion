@@ -2,9 +2,9 @@
 <div class="flex justify-between items-center">
     <div class="flex flex-col gap-[10px]">
         <div class="font-bold text-[32px] text-white">
-            Watch Today
+            @yield('title')
         </div>
-        <p class="mb-0 text-stream-gray text-base">Our selected movies for your mood</p>
+        <p class="mb-0 text-stream-gray text-base">@yield('title-description')</p>
     </div>
     <div class="flex items-center gap-[26px]">
         <span class="text-white text-base">Welcome, Miranda Nur</span>
@@ -13,7 +13,7 @@
             <a href="#!"
                 class="outline outline-2 outline-stream-gray p-[6px] rounded-full w-[60px] dropdown-button"
                 data-target="#dropdown-stream">
-                <img src="{{ assets('cinefusion/assets/images/photo.png') }}" class="rounded-full object-cover w-full"
+                <img src="{{ asset('cinefusion/assets/images/photo.png') }}" class="rounded-full object-cover w-full"
                     alt="stream" />
             </a>
             <div class="bg-white rounded-2xl text-stream-dark font-medium flex flex-col gap-1 absolute z-[999] right-0 top-[80px] min-w-[180px] hidden overflow-hidden"
