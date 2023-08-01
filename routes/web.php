@@ -47,5 +47,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function() {
 
 Route::get('/register', [RegisterController::class, 'index'])->name('member.register');
 Route::post('/register', [RegisterController::class, 'store'])->name('member.register.store');
+
 Route::get('/login', [MemberLoginController::class, 'index'])->name('member.login');
+Route::post('/login', [MemberLoginController::class, 'auth'])->name('member.login.auth');
+
 

@@ -50,19 +50,33 @@
 
                     <!-- Form login -->
                     <section class="w-11/12 max-w-[460px]">
-                        <form action="" class="mt-[70px] flex flex-col bg-white p-[30px] rounded-2xl gap-6">
+                        <form action="{{ route('member.login.auth') }}" method="POST" class="mt-[70px] flex flex-col bg-white p-[30px] rounded-2xl gap-6">
+                            @csrf
                             <div class="form-input flex flex-col gap-3">
                                 <label for="email" class="text-base font-medium text-stream-dark">Email Address</label>
                                 <input type="email"
+                                    name="email"
+                                    value="{{ old('email') }}"
                                     class="rounded-full py-3 pr-3 pl-6 text-stream-dark placeholder:text-stream-gray placeholder:font-normal font-medium outline outline-stream-gray outline-1 text-base focus:outline-indigo-600 input-stream"
                                     placeholder="Your email address" />
+                                @error('email')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-input flex flex-col gap-3">
                                 <label for="password" class="text-base font-medium text-stream-dark">Password</label>
                                 <input type="password"
+                                    name="password"
+                                    value="{{ old('password') }}"
                                     class="rounded-full py-3 pr-3 pl-6 text-stream-dark placeholder:text-stream-gray placeholder:font-normal font-medium outline-stream-gray outline outline-1 text-base focus:outline-indigo-600 input-stream"
                                     placeholder="Your password" />
+                                @error('password')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
                             </div>
+                            @error('credentials')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                            @enderror
                             <button type="submit" class="bg-indigo-600 rounded-full py-3 mt-4 text-center">
                                 <span class="font-semibold text-white text-base">Continue</span>
                             </button>
