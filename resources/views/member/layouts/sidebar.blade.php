@@ -1,11 +1,11 @@
 <!-- START: Sidebar -->
 <aside class="fixed z-50 w-[360px] bg-stream-dark">
     <div class="flex flex-col p-12 border-r border-softpur overflow-y-auto h-screen">
-        <a href="/">
+        <a href="{{ route('member.dashboard') }}">
             <img src="{{ asset('cinefusion/assets/images/stream.svg') }}" alt="">
         </a>
         <div class="links flex flex-col mt-16 gap-2">
-            <a href="dashboard.html" class="side-link active">
+            <a href="{{ route('member.dashboard') }}" class="side-link active">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 17L12 22L22 17" stroke-width="2" stroke-linecap="round"
