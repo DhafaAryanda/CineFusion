@@ -59,6 +59,8 @@ Route::post('/login', [MemberLoginController::class, 'auth'])->name('member.logi
 
 Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
 
+Route::view('/payment-finish', 'member.payment-finish')->name('member.payment.finish');
+
 Route::group(['prefix' => 'member', 'middleware' => ['auth']], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('member.dashboard');
 
